@@ -19,20 +19,20 @@ public class NumberToLcdTest extends TestCase{
     }
 	
 	public void testNumberToLcd() {
-		String one = "   \n  |\n  |";
-		String two = " _ \n _|\n|_ ";
-		String three = " _ \n _|\n _|";
-		String four = "   \n|_|\n  |";
-		String five = " _ \n|_ \n _|";
-		String six = " _ \n|_ \n|_|";
-		String seven = " _ \n  |\n  |";
-		String eight = " _ \n|_|\n|_|";
-		String nine = " _ \n|_|\n _|";
-		String zero = " _ \n| |\n|_|";
+		String one = "      \n     |\n     |\n     |\n     |";
+		String two = " ____ \n     |\n ____|\n|     \n|____ ";
+		String three = " ____ \n     |\n ____|\n     |\n ____|";
+		String four = "      \n|    |\n|____|\n     |\n     |";
+		String five = " ____ \n|     \n|____ \n     |\n ____|";
+		String six = " ____ \n|     \n|____ \n|    |\n|____|";
+		String seven = " ____ \n     |\n     |\n     |\n     |";
+		String eight = " ____ \n|    |\n|____|\n|    |\n|____|";
+		String nine = " ____ \n|    |\n|____|\n     |\n ____|";
+		String zero = " ____ \n|    |\n|    |\n|    |\n|____|";
 		String expected = "";
 		
-		for (int i = 0; i<3; i++) {
-			expected = expected + one.split("\n")[i]+
+		for (int i = 0; i<5; i++) {
+			expected = expected + one.split("\n")[i] +
 					two.split("\n")[i]+
 					three.split("\n")[i]+
 					four.split("\n")[i]+
@@ -42,13 +42,13 @@ public class NumberToLcdTest extends TestCase{
 					eight.split("\n")[i]+
 					nine.split("\n")[i]+
 					zero.split("\n")[i];
-			if (i<2)
+			if (i<4)
 				expected = expected+"\n";
 		}
 		
 		System.out.println(expected);
-		System.out.println(NumberToLcd.numberToLcd(1234567890));
-		Assert.assertEquals(expected, NumberToLcd.numberToLcd(1234567890));
+		System.out.println(NumberToLcd.numberToLcd(1234567890,4,4));
+		Assert.assertEquals(expected, NumberToLcd.numberToLcd(1234567890,4,4));
 	}
 
 }
